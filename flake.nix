@@ -17,6 +17,13 @@
       url = "github:snowfallorg/lib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    plasma-manager = {
+      url = "github:pjones/plasma-manager";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
   };
 
   outputs = inputs:
@@ -30,6 +37,9 @@
           title = "Socks' config";
         };
       };
+      homes.modules = with inputs; [
+        plasma-manager.homeManagerModules.plasma-manager
+      ];
       outputs-builder = channels: {
         formatter = channels.nixpkgs.alejandra;
       };
