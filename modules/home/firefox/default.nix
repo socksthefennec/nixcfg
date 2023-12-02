@@ -15,15 +15,22 @@ in {
     '';
   };
 
+  config.home.sessionVariables = mkIf cfg.enable {
+    MOZ_USE_XINPUT2 = 1;
+  };
   config.programs.firefox = mkIf cfg.enable {
     enable = true;
     profiles.default = {
       settings = {
         "browser.ctrlTab.sortByRecentlyUsed" = true;
-        "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
-        "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = false;
-        "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
-        "browser.newtabpage.activity-stream.section.highlights.includeVisited" = false;
+        "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" =
+          false;
+        "browser.newtabpage.activity-stream.section.highlights.includeDownloads" =
+          false;
+        "browser.newtabpage.activity-stream.section.highlights.includePocket" =
+          false;
+        "browser.newtabpage.activity-stream.section.highlights.includeVisited" =
+          false;
         "browser.newtabpage.activity-stream.showSearch" = false;
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
         "browser.newtabpage.activity-stream.topSitesRows" = 4;

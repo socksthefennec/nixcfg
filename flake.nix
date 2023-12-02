@@ -17,17 +17,10 @@
       url = "github:snowfallorg/lib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    plasma-manager = {
-      url = "github:pjones/plasma-manager";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-      };
-    };
   };
 
-  outputs = inputs:
-    inputs.snowfall-lib.mkFlake {
+  outputs = inputs: let
+    lib = inputs.snowfall-lib.mkLib {
       inherit inputs;
       src = ./.;
       snowfall = {
@@ -37,8 +30,18 @@
           title = "Socks' config";
         };
       };
-      homes.modules = with inputs; [
-        plasma-manager.homeManagerModules.plasma-manager
+    };
+  in
+    lib.mkFlake {
+      channels-config = {
+        allowUnfree = true;
+      };
+      overlays = with inputs; [
+        nur.overlay
+        nixgl.overlay
+      ];
+      systems.modules.nixos = with inputs; [
+        home-manager.nixosModules.home-manager
       ];
       outputs-builder = channels: {
         formatter = channels.nixpkgs.alejandra;
