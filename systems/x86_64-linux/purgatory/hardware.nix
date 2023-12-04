@@ -8,7 +8,7 @@
   boot = {
     initrd = {
       availableKernelModules = ["xhci_pci" "ahci" "ehci_pci" "usb_storage" "sd_mod"];
-      kernelModules = [];
+      kernelModules = ["amdgpu"];
     };
     loader = {
       systemd-boot.enable = true;

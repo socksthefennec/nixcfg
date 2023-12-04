@@ -6,9 +6,10 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware.nix
-    ./gnome.nix
     ./user.nix
   ];
+
+  sockscfg.desktop.gnome.enable = true;
 
   time.timeZone = "Australia/Brisbane";
 
