@@ -11,6 +11,10 @@
 
   sockscfg.desktop.gnome.enable = true;
 
+  boot.plymouth = {
+    enable = true;
+  };
+
   time.timeZone = "Australia/Brisbane";
 
   i18n.defaultLocale = "en_AU.UTF-8";
