@@ -89,21 +89,6 @@ in {
         view-image
       ];
       userChrome = ''
-        /* make tabs and bar look nicer */
-        :root {
-          --tabs-box-shadow: 0 0 4px rgba(0,0,0,.4);
-        }
-
-        .browser-toolbar {
-          --toolbar-bgcolor: -moz-dialog;
-          box-shadow: unset !important;
-        }
-
-        .tab-background:is([selected], [multiselected]) {
-          --tab-selected-bgcolor: -moz-dialog;
-          box-shadow: var(--tabs-box-shadow) !important;
-        }
-
         /* fancy statuspanel (the thing on the bottom left/right when you hover a link) styling */
         #statuspanel-label {
           background: -moz-dialog;

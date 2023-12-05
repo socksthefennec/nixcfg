@@ -4,12 +4,14 @@
   ...
 }: {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware.nix
     ./user.nix
   ];
 
-  sockscfg.desktop.gnome.enable = true;
+  sockscfg = {
+    desktop.gnome.enable = true;
+    gaming.enable = true;
+  };
 
   boot.plymouth = {
     enable = true;
