@@ -54,6 +54,7 @@ in {
         "org/gnome/desktop/interface" = {
           color-scheme = "prefer-dark";
           gtk-theme = "adw-gtk3-dark";
+          enable-hot-corners = false;
         };
         "org/gnome/desktop/peripherals/touchpad" = {
           natural-scroll = false;
@@ -89,8 +90,11 @@ in {
           switch-applications = [];
           switch-applications-backward = [];
         };
+        "org/gnome/shell/wm/preferences" = {
+          num-workspaces = 10;
+        };
         "org/gnome/mutter" = {
-          dynamic-workspaces = true;
+          dynamic-workspaces = false;
         };
         "org/gnome/shell/extensions/appindicator" = {
           icon-opacity = 255;

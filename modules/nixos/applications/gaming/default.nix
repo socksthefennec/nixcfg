@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: let
-  inherit (lib) mkOption mkDefault types;
-  cfg = config.sockscfg.gaming;
+  inherit (lib) mkIf mkOption mkDefault types;
+  cfg = config.sockscfg.applications.gaming;
 in {
-  options.sockscfg.gaming = {
+  options.sockscfg.applications.gaming = {
     enable = mkOption {
       type = types.bool;
       default = false;
@@ -16,7 +16,7 @@ in {
       '';
     };
   };
-  config = {
+  config = mkIf cfg.enable {
     programs.steam.enable = true;
     environment.systemPackages = with pkgs; [
       itch

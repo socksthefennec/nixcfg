@@ -10,7 +10,10 @@
 
   sockscfg = {
     desktop.gnome.enable = true;
-    gaming.enable = true;
+    applications = {
+      gaming.enable = true;
+      messaging.enable = true;
+    };
   };
 
   boot.plymouth = {
