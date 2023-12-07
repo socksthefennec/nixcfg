@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware.nix
     ./user.nix
@@ -18,6 +15,8 @@
   boot.plymouth = {
     enable = true;
   };
+
+  services.fwupd.enable = true;
 
   time.timeZone = "Australia/Brisbane";
 
