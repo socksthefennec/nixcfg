@@ -90,7 +90,7 @@ in {
           switch-applications = [];
           switch-applications-backward = [];
         };
-        "org/gnome/shell/wm/preferences" = {
+        "org/gnome/desktop/wm/preferences" = {
           num-workspaces = 10;
         };
         "org/gnome/mutter" = {
