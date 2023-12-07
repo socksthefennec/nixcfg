@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  inherit (lib) mkIf mkOption mkDefault types;
+  inherit (lib) mkIf mkOption types;
   cfg = config.sockscfg.applications.gaming;
 in {
   options.sockscfg.applications.gaming = {

@@ -1,11 +1,8 @@
 {
-  config,
   lib,
-  pkgs,
   ...
 }: let
-  inherit (lib) types mkDefault mkOption;
-  cfg = config.sockscfg;
+  inherit (lib) types mkOption;
 in {
   options.sockscfg = {
     enable = mkOption {

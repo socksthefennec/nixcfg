@@ -4,8 +4,7 @@
   pkgs,
   ...
 }: let
-  inherit (lib) mkIf mkOption mkDefault types;
-  cfg = config.sockscfg.applications.messaging;
+  inherit (lib) mkOption types;
 in {
   options.sockscfg.applications.messaging = {
     enable = mkOption {

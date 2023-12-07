@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  inherit (lib) types mkIf mkDefault mkOption;
+  inherit (lib) types mkIf mkOption;
   cfg = config.sockscfg.firefox;
 in {
   options.sockscfg.firefox.enable = mkOption {
