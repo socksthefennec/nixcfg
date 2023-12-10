@@ -17,7 +17,7 @@ in {
   };
   config = {
     environment.systemPackages = with pkgs; [
-      telegram-desktop
+      sockscfg.forkgram
       discord
     ];
   };
