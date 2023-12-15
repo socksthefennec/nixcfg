@@ -47,6 +47,7 @@ in {
     home.packages = with pkgs; [alejandra (lib.mkIf cfg.neovide.enable neovide)];
     programs.neovim = {
       enable = true;
+      defaultEditor = true;
       extraLuaConfig = ''
         vim.o.termguicolors = true
         vim.o.number = true
