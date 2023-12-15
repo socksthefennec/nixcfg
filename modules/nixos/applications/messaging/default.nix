@@ -4,7 +4,8 @@
   pkgs,
   ...
 }: let
-  inherit (lib) mkOption types;
+  inherit (lib) mkIf mkOption types;
+  cfg = config.sockscfg.applications.messaging;
 in {
   options.sockscfg.applications.messaging = {
     enable = mkOption {
@@ -15,7 +16,7 @@ in {
       '';
     };
   };
-  config = {
+  config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       sockscfg.forkgram
       discord
