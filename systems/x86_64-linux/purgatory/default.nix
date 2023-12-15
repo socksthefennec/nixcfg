@@ -42,6 +42,7 @@
   #    #media-session.enable = true;
   #  };
 
+  services.gnome.gnome-keyring.enable = true;
   services.pcscd.enable = true;
   programs.gnupg.agent = {
     enable = true;
