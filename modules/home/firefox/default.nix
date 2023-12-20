@@ -22,6 +22,7 @@ in {
     enable = true;
     profiles.default = {
       settings = {
+        "app.shield.optoutstudies.enabled" = false;
         "browser.ctrlTab.sortByRecentlyUsed" = true;
         "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" =
           false;
@@ -36,6 +37,7 @@ in {
         "browser.newtabpage.activity-stream.topSitesRows" = 4;
         "browser.search.suggest.enabled" = false;
         "browser.sessionstore.warnOnQuit" = true;
+        "browser.startup.page" = 3;
         "browser.tabs.inTitlebar" = 1;
         "browser.tabs.warnOnClose" = true;
         "browser.toolbars.bookmarks.visibility" = "never";
@@ -47,7 +49,10 @@ in {
         "layout.css.has-selector.enabled" = true;
         "layout.css.scroll-driven-animations.enabled" = true;
         "media.hardwaremediakeys.enabled" = false;
+        "media.videocontrols.picture-in-picture.video-toggle.enabled" = false;
         "privacy.donottrackheader.enabled" = true;
+        "privacy.globalprivacycontrol.enabled" = true;
+        "signon.rememberSignons" = false;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
       };
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
