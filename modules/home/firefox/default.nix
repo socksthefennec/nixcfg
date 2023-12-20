@@ -55,44 +55,6 @@ in {
         "signon.rememberSignons" = false;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
       };
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-        auto-tab-discard
-        bitwarden
-        clearurls
-        consent-o-matic
-        cookies-txt
-        darkreader
-        decentraleyes
-        # not found: Don't accept image/webp
-        # not found: Don't touch my tabs!
-        enhancer-for-youtube
-        # not found: FABUI
-        facebook-container
-        # not found: fastforward
-        # fediact
-        # not found: ffz
-        # gnome-shell-integration
-        image-search-options
-        # plasma-integration
-        privacy-badger
-        privacy-possum
-        pronoundb
-        # reddit-enhancement-suite
-        # not found: reddit masstagger
-        # not found: redirect amp to html
-        # not found: share to mastodon
-        # not found: shinigami eyes
-        # not found: simple translate
-        # not found: smart https
-        # not found: smartupscale
-        # not found: steam url opener
-        streetpass-for-mastodon
-        stylus
-        transparent-standalone-image
-        ublock-origin
-        # not found: up to 11
-        view-image
-      ];
       userChrome = ''
         /* fancy statuspanel (the thing on the bottom left/right when you hover a link) styling */
         #statuspanel-label {
@@ -104,6 +66,46 @@ in {
           box-shadow: 0 2px 10px 2px #0007;
         }
       '';
+      # I'm probably gonna use account sync for now
+
+      # extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      #   auto-tab-discard
+      #   bitwarden
+      #   clearurls
+      #   consent-o-matic
+      #   cookies-txt
+      #   darkreader
+      #   decentraleyes
+      #   # not found: Don't accept image/webp
+      #   # not found: Don't touch my tabs!
+      #   enhancer-for-youtube
+      #   # not found: FABUI
+      #   facebook-container
+      #   # not found: fastforward
+      #   # fediact
+      #   # not found: ffz
+      #   # gnome-shell-integration
+      #   image-search-options
+      #   # plasma-integration
+      #   privacy-badger
+      #   privacy-possum
+      #   pronoundb
+      #   # reddit-enhancement-suite
+      #   # not found: reddit masstagger
+      #   # not found: redirect amp to html
+      #   # not found: share to mastodon
+      #   # not found: shinigami eyes
+      #   # not found: simple translate
+      #   # not found: smart https
+      #   # not found: smartupscale
+      #   # not found: steam url opener
+      #   streetpass-for-mastodon
+      #   stylus
+      #   transparent-standalone-image
+      #   ublock-origin
+      #   # not found: up to 11
+      #   view-image
+      # ];
       # userContent = '''';
       # extraConfig = '''';
       # search = {
