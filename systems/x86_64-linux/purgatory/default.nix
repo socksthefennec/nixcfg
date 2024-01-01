@@ -9,6 +9,7 @@
     applications = {
       gaming.enable = true;
       messaging.enable = true;
+      kitty.enable = true;
     };
   };
 

@@ -12,6 +12,7 @@
     pano
     removable-drive-menu
     caffeine
+    quake-terminal
   ];
 in {
   options.sockscfg.desktop.gnome = {
@@ -101,6 +102,12 @@ in {
         };
         "org/gnome/shell/extensions/go-to-last-workspace" = {
           shortcut-key = ["<Super>Tab"];
+        };
+        "org/gnome/shell/extensions/quake-terminal" = {
+          always-on-top = true;
+          render-on-current-monitor = true;
+          terminal-id = mkIf config.sockscfg.applications.kitty.enable "kitty.desktop";
+          terminal-shortcut = ["<Shift><Super>Return"];
         };
         "org/gnome/shell/keybindings" = {
           switch-to-application-1 = [];
