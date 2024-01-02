@@ -9,7 +9,7 @@ in
   pkgs.telegram-desktop.overrideAttrs (
     prev: rec {
       pname = "forkgram";
-      version = "4.13.1";
+      version = "4.14.2";
       src = pkgs.fetchFromGitHub {
         owner = "forkgram";
         repo = "tdesktop";
