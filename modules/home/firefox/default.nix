@@ -44,6 +44,7 @@ in {
         "devtools.theme" = "dark";
         "devtools.toolbox.host" = "window";
         "extensions.pocket.enabled" = false;
+        "general.autoscroll" = true;
         "gfx.webrender.all" = true;
         "image.jxl.enabled" = true;
         "layout.css.has-selector.enabled" = true;
