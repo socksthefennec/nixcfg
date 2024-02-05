@@ -13,6 +13,11 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [watchmate htop];
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+  };
   services.udev.extraRules = ''
     # Disable DS4 touchpad acting as mouse
     # USB
