@@ -9,13 +9,13 @@ in
   pkgs.telegram-desktop.overrideAttrs (
     prev: rec {
       pname = "forkgram";
-      version = "4.14.13";
+      version = "4.15";
       src = pkgs.fetchFromGitHub {
         owner = "forkgram";
         repo = "tdesktop";
         rev = "v${version}";
         fetchSubmodules = true;
-        hash = "sha256-BG06rftzi2+TX5yBUrtfIaiYZFIKRpK8E6Fl1gK9ldQ=";
+        hash = "sha256-UDZ0Njbc+o52k38jNyg4RhQ7ILo6uwi7NFRB2oyHpRM=";
       };
       postInstall = ''
         # taken from https://aur.archlinux.org/packages/forkgram
