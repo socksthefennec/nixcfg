@@ -21,18 +21,17 @@
       device = "/dev/disk/by-uuid/AD39-AA8C";
       fsType = "vfat";
     };
-    "/" =
-    { device = "/dev/disk/by-uuid/f4222a36-64f9-491c-9aa0-e9eb74210bcb";
+    "/" = {
+      device = "/dev/disk/by-uuid/f4222a36-64f9-491c-9aa0-e9eb74210bcb";
       fsType = "btrfs";
-      options = [ "subvol=nixos/@" ];
+      options = ["subvol=nixos/@"];
     };
 
-  "/home" =
-    { device = "/dev/disk/by-uuid/f4222a36-64f9-491c-9aa0-e9eb74210bcb";
+    "/home" = {
+      device = "/dev/disk/by-uuid/f4222a36-64f9-491c-9aa0-e9eb74210bcb";
       fsType = "btrfs";
-      options = [ "subvol=nixos/@home" ];
+      options = ["subvol=nixos/@home"];
     };
-
   };
 
   networking = {
