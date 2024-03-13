@@ -100,7 +100,7 @@ in {
           vnoremap <silent> <A-up> :m '<-2<CR>gv
         ]])
       '';
-      extraPackages = with pkgs; [nixd fzf];
+      extraPackages = with pkgs; [fzf];
       plugins = with pkgs.vimPlugins; [
         {
           plugin = nvim-lspconfig;
