@@ -112,9 +112,6 @@ in {
               end
             end
             local lspconfig = require'lspconfig'
-            lspconfig.nixd.setup {
-              on_attach = lsp_attach
-            }
           '';
         }
         nvim-navic
