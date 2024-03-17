@@ -43,8 +43,6 @@
       systems.modules.nixos = with inputs; [
         home-manager.nixosModules.home-manager
       ];
-      # how do I set specialArgs for all systems???
-      systems.hosts.decay.specialArgs = inputs;
       outputs-builder = channels: {
         formatter = channels.nixpkgs.alejandra;
       };

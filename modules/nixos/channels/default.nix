@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  nixpkgs,
+  inputs,
   ...
 }: let
   inherit (lib) types mkOption mkIf;
@@ -19,9 +19,10 @@ in {
 
   config = mkIf cfg.enable {
     nix = {
-      registry.nixpkgs.flake = nixpkgs;
+      #TODO: all inputs?
+      registry.nixpkgs.flake = inputs.nixpkgs;
       nixPath = [
-        "nixpkgs=${nixpkgs}"
+        "nixpkgs=${inputs.nixpkgs}"
         "/nix/var/nix/profiles/per-user/root/channels"
       ];
     };
