@@ -5,11 +5,14 @@
 }: {
   boot = {
     initrd = {
-      availableKernelModules = ["xhci_pci" "ahci" "ehci_pci" "usb_storage" "sd_mod"];
-      kernelModules = [];
+      availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "ums_realtek" "sd_mod" "sr_mod"];
+      kernelModules = ["kvm-intel"];
     };
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot = {
+        enable = true;
+        consoleMode = "max";
+      };
       efi.canTouchEfiVariables = true;
     };
     kernelModules = [];
@@ -18,28 +21,33 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/4de18055-c638-44fd-b2d3-3d3d4a8f2df9";
+      device = "/dev/disk/by-uuid/7292d1e3-3c09-465d-be3c-62be70c5e537";
       fsType = "btrfs";
       options = ["subvol=nixos/@"];
     };
     "/home" = {
-      device = "/dev/disk/by-uuid/4de18055-c638-44fd-b2d3-3d3d4a8f2df9";
+      device = "/dev/disk/by-uuid/7292d1e3-3c09-465d-be3c-62be70c5e537";
       fsType = "btrfs";
       options = ["subvol=nixos/@home"];
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/4de18055-c638-44fd-b2d3-3d3d4a8f2df9";
+      device = "/dev/disk/by-uuid/7292d1e3-3c09-465d-be3c-62be70c5e537";
       fsType = "btrfs";
       options = ["subvol=nixos/@nix"];
     };
+    "/var" = {
+      device = "/dev/disk/by-uuid/7292d1e3-3c09-465d-be3c-62be70c5e537";
+      fsType = "btrfs";
+      options = ["subvol=nixos/@var"];
+    };
     "/boot" = {
-      device = "/dev/disk/by-uuid/0D40-DAF3";
+      device = "/dev/disk/by-uuid/2D96-5E5C";
       fsType = "vfat";
     };
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/62a55d92-6843-47b9-9ba5-1898a831ebc3";}
+    {device = "/dev/disk/by-uuid/ce97e1dc-6405-4fc4-8df6-640fcb41c93e";}
   ];
 
   networking = {

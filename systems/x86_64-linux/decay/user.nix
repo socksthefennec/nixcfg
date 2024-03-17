@@ -11,7 +11,7 @@ in {
   # };
   users.users.${sockscfg.user.name} = {
     initialHashedPassword = "$y$j9T$O663AsUwicdKYIQzKpqoV.$0VhavBNOGds5YLA.fBmASVR.PyWiE76Wgeh1QNG1LE4";
-    extraGroups = ["networkmanager"];
+    extraGroups = ["networkmanager" "cdrom"];
   };
   home-manager = {
     useGlobalPkgs = true;

@@ -2,6 +2,7 @@
   imports = [
     ./hardware.nix
     ./user.nix
+    ./hydra.nix
   ];
 
   sockscfg = {
@@ -13,11 +14,13 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [watchmate htop];
+  environment.systemPackages = with pkgs; [watchmate htop makemkv gnome.gnome-software gsmartcontrol gparted nixos-install-tools git];
+  services.flatpak.enable = true;
   services.avahi = {
     enable = true;
     nssmdns = true;
   };
+  services.openssh.enable = true;
   services.udev.extraRules = ''
     # Disable DS4 touchpad acting as mouse
     # USB
@@ -26,6 +29,7 @@
     # Bluetooth
     ATTRS{name}=="Wireless Controller Touchpad", ENV{LIBINPUT_IGNORE_DEVICE}="1"
   '';
+  security.polkit.enable = true;
 
   boot.plymouth = {
     enable = true;
