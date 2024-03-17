@@ -3,6 +3,7 @@
     ./hardware.nix
     ./user.nix
     ./hydra.nix
+    ./nix-serve.nix
   ];
 
   sockscfg = {
