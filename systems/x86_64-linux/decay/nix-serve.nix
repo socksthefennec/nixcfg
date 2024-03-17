@@ -1,7 +1,10 @@
-{...}: {
+{...}: let
+  privkey = "/var/cache-priv-key.pem";
+in {
   services.nix-serve = {
     enable = true;
-    secretKeyFile = "/var/cache-priv-key.pem";
+    secretKeyFile = privkey;
     openFirewall = true;
   };
+  nix.settings.secret-key-files = [privkey];
 }
