@@ -31,7 +31,7 @@ in {
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
     };
-    environment.systemPackages = extensions ++ [pkgs.adw-gtk3];
+    environment.systemPackages = extensions ++ (with pkgs; [adw-gtk3 polkit_gnome]);
     services.udev.packages = with pkgs; [gnome.gnome-settings-daemon];
     home-manager.users.${config.sockscfg.user.name} = {
       dconf.settings = {
