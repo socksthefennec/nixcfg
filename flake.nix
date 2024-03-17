@@ -32,7 +32,7 @@
       };
     };
   in
-    lib.mkFlake {
+    (lib.mkFlake {
       channels-config = {
         allowUnfree = true;
       };
@@ -48,5 +48,8 @@
       outputs-builder = channels: {
         formatter = channels.nixpkgs.alejandra;
       };
+    })
+    // {
+      hydraJobs = inputs.self.packages.x86_64-linux;
     };
 }
