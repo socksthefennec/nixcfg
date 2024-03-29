@@ -11,6 +11,7 @@
       messaging.enable = true;
       kitty.enable = true;
     };
+    binfmt.appimage.enable = true;
   };
 
   environment.systemPackages = with pkgs; [watchmate htop makemkv gnome.gnome-software gnome-firmware gsmartcontrol gparted nixos-install-tools git];
