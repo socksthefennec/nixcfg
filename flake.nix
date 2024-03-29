@@ -2,7 +2,6 @@
   description = "Home Manager configuration of socks";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -13,6 +12,7 @@
       url = "github:guibou/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
     snowfall-lib = {
       url = "github:snowfallorg/lib";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,6 +42,7 @@
       ];
       systems.modules.nixos = with inputs; [
         home-manager.nixosModules.home-manager
+        nix-flatpak.nixosModules.nix-flatpak
       ];
       outputs-builder = channels: {
         formatter = channels.nixpkgs.alejandra;
