@@ -13,7 +13,6 @@
     removable-drive-menu
     caffeine
     quake-terminal
-    grand-theft-focus
   ];
 in {
   options.sockscfg.desktop.gnome = {
